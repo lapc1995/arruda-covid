@@ -16,10 +16,12 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 
+  (async () => {
   const response = await got(url);
   const dom = new JSDOM(response.body);
   const table = [...dom.window.document.getElementById('content-zone').querySelectorAll('tbody')[1].querySelectorAll('tr')];
     console.log(table)
+  })()
 
 } catch (error) {
   core.setFailed(error.message);
