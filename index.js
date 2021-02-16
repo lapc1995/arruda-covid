@@ -6,6 +6,8 @@ const got = require('got');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+const url = "http://www.oestecim.pt/CustomPages/ShowPage.aspx?pageid=481bf11b-80a2-4b10-ad99-da50ba450b36";
+
 try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
